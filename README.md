@@ -6,7 +6,7 @@ We share maps--google maps raise.
 We share car seats--Uber and Lyft raise. 
 We share concret product-- Amazon raise. 
 Today we will share abstract product(service)-- Misisipi(I named it) is raising. 
-Everyone needs handy help, for example:AC repaired, lawn cut, house clearning, babysitter...... 
+Everyone needs handy help, for example:AC needs repairing, lawn cut, house clearning, babysitter...... 
 I will build a platform for abstract product(service), it is the second Amazon, the company will be growing up to more than one trillion market value.
 My mission is: make lives easy and happy.
 But now my company only one empployee, it is me, I cannot do all the things to create the platform. 

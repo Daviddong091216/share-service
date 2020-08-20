@@ -4,6 +4,7 @@ import org.launchcode.shareservice.data.UserRepository;
 import org.launchcode.shareservice.models.User;
 import org.launchcode.shareservice.models.dto.RegisterFormDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.Optional;
 
+@Controller
 public class AuthenticationController {
     @Autowired
     private UserRepository userRepository;

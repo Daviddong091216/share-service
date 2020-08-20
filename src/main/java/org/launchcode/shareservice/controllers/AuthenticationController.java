@@ -2,6 +2,7 @@ package org.launchcode.shareservice.controllers;
 
 import org.launchcode.shareservice.data.UserRepository;
 import org.launchcode.shareservice.models.User;
+import org.launchcode.shareservice.models.dto.LoginFormDTO;
 import org.launchcode.shareservice.models.dto.RegisterFormDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,7 @@ import java.util.Optional;
 
 @Controller
 public class AuthenticationController {
+    
     @Autowired
     private UserRepository userRepository;
 
@@ -81,5 +83,44 @@ public class AuthenticationController {
 
         return "redirect:";
     }
+    @GetMapping("/login")
+    public String displayLoginForm(Model model) {
+        model.addAttribute("loginFormDTO",new LoginFormDTO());
+        model.addAttribute("title", "Log In");
+        return "/login/login";
+    }
+
+    @PostMapping("/login")
+    public String processLoginForm(@ModelAttribute @Valid LoginFormDTO loginFormDTO,
+                                   Errors errors, HttpServletRequest request,
+                                   Model model) {
+
+        if (errors.hasErrors()) {
+            model.addAttribute("title", "Log In");
+            return "/login/login";
+        }
+
+        User theUser = userRepository.findByUsername(loginFormDTO.getUsername());
+
+        if (theUser == null) {
+            errors.rejectValue("username", "user.invalid", "The given username does not exist");
+            model.addAttribute("title", "Log In");
+            return "/login/login";
+        }
+
+        String password = loginFormDTO.getPassword();
+
+        if (!theUser.isMatchingPassword(password)) {
+            errors.rejectValue("password", "password.invalid", "Invalid password");
+            model.addAttribute("title", "Log In");
+            return "/login/login";
+        }
+
+        setUserInSession(request.getSession(), theUser);
+
+        return "redirect:";
+    }
+
+
 
 }

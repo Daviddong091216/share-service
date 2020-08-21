@@ -11,10 +11,16 @@
     <link  rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
 </head>
 <body class="container">
-<div th:fragment="page-header" class="navbar navbar-inverse navbar-fixed-top" style="background-color:#8B0000">
-    <h1  th:text="${title}"></h1>
-</div>
 
+<nav th:fragment="navigation" class="nav">
+    <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="/">Main Page</a></li>
+        <li class="nav-item"><a class="nav-link" href="/register" >Register</a></li>
+        <li class="nav-item"><a class="nav-link" href="/login" >Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="/logout" >Logout</a></li>
+    </ul>
+
+</nav>
 
 <footer th:fragment="footer" class="footer">
     <p>Author: David Dong            Email: daviddong201712@gmail.com</p>

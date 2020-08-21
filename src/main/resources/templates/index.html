@@ -2,10 +2,11 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 <body  class="container">
-<div th:replace="fragments :: page-header"></div>
+
+<nav th:replace="fragments :: navigation"></nav>
 
 <h1><a href="/register">Register</a></h1>
 <h1><a href="/login">Log In</a></h1>
-    <div th:replace="fragments :: footer"></div>
+<div th:replace="fragments :: footer"></div>
 </body>
 </html>

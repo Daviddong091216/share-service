@@ -19,7 +19,7 @@ import java.util.Optional;
 
 @Controller
 public class AuthenticationController {
-    
+
     @Autowired
     private UserRepository userRepository;
 

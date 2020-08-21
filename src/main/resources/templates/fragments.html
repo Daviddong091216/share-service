@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <title>David Dong</title>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script th:src="@{/js/script.js}"></script>
+    <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+    <link  rel="stylesheet" th:href="@{/css/shareservice.css}"/>
+    <link  rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+</head>
+<body class="container">
+<div th:fragment="page-header">
+    <h1  th:text="${title}"></h1>
+</div>
+
+
+<footer th:fragment="footer" class="footer">
+    <p>Author: David Dong            Email: daviddong201712@gmail.com</p>
+</footer>
+
+</body>
+</html>

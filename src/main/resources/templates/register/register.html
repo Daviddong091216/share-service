@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <title>David Dong</title>
-</head>
+<head th:replace="fragments :: head"></head>
 <body>
-<h1 th:text="${title}"></h1>
+<div th:fragment="page-header" class="navbar navbar-inverse navbar-fixed-top" style="background-color:#8B0000"></div>
+
+
 <form method="post">
     <div class="form-group">
         <label>Username
@@ -27,5 +26,6 @@
 
     <input type="submit" class="btn btn-primary" value="Register" />
 </form>
+    <div th:replace="fragments::footer"></div>
 </body>
 </html>

@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<body>
-<div th:fragment="page-header" class="navbar navbar-inverse navbar-fixed-top" style="background-color:#8B0000"></div>
-
+<body class="container">
+<div th:replace="fragments :: page-header"></div>
 
 
 <form method="post">
@@ -24,6 +23,6 @@
 </form>
 
 <p>Don't have an account? <a href="/register">Register for one.</a></p>
-<div th:replace="fragments::footer"></div>
+<div th:replace="fragments :: footer"></div>
 </body>
 </html>

@@ -1,6 +1,6 @@
 
 .container {
-    margin-top: 50px;
+    margin-top: 50px; /* Add a top margin to avoid content overlay */
 }
 
 td, th {

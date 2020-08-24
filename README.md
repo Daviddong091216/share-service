@@ -1,7 +1,8 @@
 # share-service
-July 9, 2020. Share is a great idea. Make life easy and happy. We are creating the biggest abstract product platform,  another Amazon.
-We are human. We have two features:love and share.
-We share feelings--facebook raise.
+July 9, 2020. <br />
+Share is a great idea. Make life easy and happy. We are creating the biggest abstract product platform,  another Amazon.<br />
+We are human. We have two features:love and share.<br />
+We share feelings--facebook raise.<br />
 We share maps--google maps raise. 
 We share car seats--Uber and Lyft raise. 
 We share concret product-- Amazon raise. 

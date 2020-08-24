@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("needsbabysitter")
+@RequestMapping("babysitter")
 public class NeedsBabysitterController {
 
     @GetMapping("index")
     public String displayMainPage(Model model) {
-        return "needsbabysitter/index";
+        return "babysitter/index";
     }
 }

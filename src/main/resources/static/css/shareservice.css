@@ -1,6 +1,9 @@
 
 .container {
     margin-top: 50px; /* Add a top margin to avoid content overlay */
+
+    left:0;
+    right:0;
 }
 
 td, th {
@@ -52,8 +55,9 @@ label {
    color:white;
    font-size:20px;
    top:0;
-   width:100%;
    background:#8B0000;
+   left:0;
+   right:0;
 }
 
 .footer {
@@ -63,6 +67,7 @@ label {
    color:white;
    font-size:20px;
    bottom:0;
-   width:100%;
+   left:0;
+   right:0;
    background:#8B0000;
 }

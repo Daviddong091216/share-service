@@ -116,11 +116,17 @@ public class AuthenticationController {
             return "/login/login";
         }
 
+        model.addAttribute("title",loginFormDTO.getUsername());
+
         setUserInSession(request.getSession(), theUser);
 
-        return "redirect:";
+        return "/login/welcome";
     }
 
-
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request){
+        request.getSession().invalidate();
+        return "redirect:/login";
+    }
 
 }

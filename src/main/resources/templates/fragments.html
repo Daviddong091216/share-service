@@ -24,8 +24,7 @@
 <nav th:fragment="navigation1" class="topnav" >
     <ul class="nav">
         <li class="nav-item"><a class="nav-link" href="/mainpage">Main Page</a></li>
-        <li class="nav-item"><a class="nav-link" href="/acNeedsRepairing/delete">Delete AcNeedsRepairing</a></li>
-        <li class="nav-item"><a class="nav-link" href="/cities/delete">Delete City</a></li>
+        <li class="nav-item"><a class="nav-link" href="/acNeedsRepairing/add">Add AcNeedsRepairing</a></li>
 
         <li class="nav-item"><a class="nav-link" href="/logout" >Logout</a></li>
     </ul>
@@ -39,6 +38,13 @@
     </ul>
 </nav>
 
+<nav th:fragment="navigation3" class="navx">
+    <ul class="list">
+        <li><a href="/problems/add">Add Problem</a></li>
+        <li><a href="/problems/delete">Delete Problems</a></li>
+
+    </ul>
+</nav>
 
 <footer th:fragment="footer" class="footer">
     <p>Author: David Dong            Email: daviddong201712@gmail.com</p>

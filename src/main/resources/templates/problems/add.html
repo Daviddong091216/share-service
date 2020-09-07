@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<nav th:replace="fragments :: navigation1"></nav>
+<nav th:replace="fragments :: navigation3"></nav>
+
+<h1 th:text="${title}"></h1>
+
+
+<form method="post" style="max-width:600px;">
+    <div class="form-group">
+        <label th:for="name">Problem</label>
+        <input class="form-control" th:field="${problem.name}" />
+        <span th:errors="${problem.name}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="description">Problem Description</label>
+        <input class="form-control" th:field="${problem.description}" />
+        <span th:errors="${problem.description}" class="error"></span>
+    </div>
+
+    <input type="submit" value="Add Problem" />
+</form>
+
+<div th:replace="fragments :: footer"></div>
+</body>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<nav th:replace="fragments :: navigation1"></nav>
+<nav th:replace="fragments :: navigation3"></nav>
+
+<h1 th:text="${title}"></h1>
+
+<p th:unless="${problems} and ${problems.size()}" style="color:red">no problems!</p>
+
+<ul>
+    <li th:each="problem : ${problems}">
+        <a th:href="@{'/problems/view/' + ${problem.id}}" th:text="${problem.name}"></a>
+    </li>
+</ul>
+<a th:href="@{'/problems/add'}">Add Problems</a>
+
+<div th:replace="fragments :: footer"></div>
+</body>

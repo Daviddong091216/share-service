@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<nav th:replace="fragments :: navigation1"></nav>
+<nav th:replace="fragments :: navigation2"></nav>
+
+<h1 th:text="${title}"></h1>
+
+
+<p th:unless="${cities} and ${cities.size()}" style="color:red">no city!</p>
+
+<ul>
+    <li th:each="city : ${cities}">
+        <a th:href="@{'/cities/view/' + ${city.id}}" th:text="${city.name}"></a>
+    </li>
+</ul>
+<a th:href="@{'/cities/add'}">Add Cities</a>
+
+
+
+<div th:replace="fragments :: footer"></div>
+</body>

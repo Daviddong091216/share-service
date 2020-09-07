@@ -25,11 +25,19 @@
     <ul class="nav">
         <li class="nav-item"><a class="nav-link" href="/mainpage">Main Page</a></li>
         <li class="nav-item"><a class="nav-link" href="/acNeedsRepairing/delete">Delete AcNeedsRepairing</a></li>
+        <li class="nav-item"><a class="nav-link" href="/cities/delete">Delete City</a></li>
 
         <li class="nav-item"><a class="nav-link" href="/logout" >Logout</a></li>
     </ul>
 </nav>
 
+<nav th:fragment="navigation2" class="navx">
+    <ul class="list">
+        <li><a href="/cities/add">Add City</a></li>
+        <li><a href="/cities/delete">Delete Cities</a></li>
+
+    </ul>
+</nav>
 
 
 <footer th:fragment="footer" class="footer">

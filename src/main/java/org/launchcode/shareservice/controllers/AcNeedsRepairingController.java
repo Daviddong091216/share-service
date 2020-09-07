@@ -81,4 +81,22 @@ public class AcNeedsRepairingController {
         }
     }
 
+
+    @GetMapping("delete")
+    public String renderDeleteEventForm(Model model) {
+        model.addAttribute("title", "Delete Job");
+        model.addAttribute("acNeedsRepairings", acNeedsRepairingRepository.findAll());
+        return "/acNeedsRepairing/delete";
+    }
+
+    @PostMapping("delete")
+    public String processDeleteEventsForm(@RequestParam(required = false) int[] acNeedsRepairingIds) {
+        if (acNeedsRepairingIds != null) {
+            for (int id : acNeedsRepairingIds) {
+                acNeedsRepairingRepository.deleteById(id);
+            }
+        }
+        return "redirect:";
+    }
+
 }

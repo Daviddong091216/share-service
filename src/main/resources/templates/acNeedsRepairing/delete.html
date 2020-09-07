@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<nav th:replace="fragments :: navigation1"></nav>
+
+<h1 th:text="${title}"></h1>
+
+<form method="post">
+
+    <th:block th:each="acNeedsRepairing : ${acNeedsRepairings}">
+        <div class="form-group">
+            <label>
+                <span th:text="${acNeedsRepairing.name}"></span>
+                <input type="checkbox" name="acNeedsRepairingIds" th:value="${acNeedsRepairing.id}" class="form-control">
+            </label>
+        </div>
+    </th:block>
+
+    <input type="submit" value="Delete Selected Jobs" class="btn btn-danger">
+</form>
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>

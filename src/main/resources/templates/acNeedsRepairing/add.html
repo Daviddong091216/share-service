@@ -3,7 +3,7 @@
 <head th:replace="fragments :: head"></head>
 <body class="container">
 
-<nav th:replace="fragments :: navigation"></nav>
+<nav th:replace="fragments :: navigation1"></nav>
 
 <h1 th:text="${title}"></h1>
 
@@ -46,7 +46,7 @@
         <a th:href="@{'/problems/add'}">Add Problems</a>
     </div>
 
-    <input type="submit" value="Add Job" />
+    <input type="submit" value="Add" />
 </form>
 </div>
 <div th:replace="fragments :: footer"></div>

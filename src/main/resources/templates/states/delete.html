@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<nav th:replace="fragments :: navigation1"></nav>
+<nav th:replace="fragments :: navigation4"></nav>
+
+<h1 th:text="${title}"></h1>
+
+<form method="post">
+
+    <th:block th:each="state : ${states}">
+        <div class="form-group">
+            <label>
+                <span th:text="${state.name}"></span>
+                <input type="checkbox" name="stateIds" th:value="${state.id}" class="form-control">
+            </label>
+        </div>
+    </th:block>
+
+    <input type="submit" value="Delete Selected State" class="btn btn-danger">
+</form>
+
+
+<div th:replace="fragments :: footer"></div>
+</body>

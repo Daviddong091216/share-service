@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<nav th:replace="fragments :: navigation1"></nav>
+<nav th:replace="fragments :: navigation4"></nav>
+
+<h1 th:text="${title}"></h1>
+
+
+<p th:unless="${states} and ${states.size()}" style="color:red">no state!</p>
+
+<ul>
+    <li th:each="state : ${states}">
+        <a th:href="@{'/states/view/' + ${state.id}}" th:text="${state.name}"></a>
+    </li>
+</ul>
+<a th:href="@{'/states/add'}">Add States</a>
+
+
+<div th:replace="fragments :: footer"></div>
+</body>

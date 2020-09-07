@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<nav th:replace="fragments :: navigation1"></nav>
+<nav th:replace="fragments :: navigation4"></nav>
+
+<h1 th:text="${title}"></h1>
+
+<h1 th:text="${'State: ' + state.name}">Default Title</h1>
+
+
+<div class="job-listing">
+    <p th:text="${'State:' + state.name}"></p>
+
+    <p> Ac Needs Repairing:
+    <ul>
+        <li th:each="acNeedsRepairing : ${state.acNeedsRepairings}">
+            <a th:href="@{'/view/' + ${acNeedsRepairing.id}}" th:text="${acNeedsRepairing.name}"></a>
+        </li>
+    </ul>
+    </p>
+
+</div>
+
+<div th:replace="fragments :: footer"></div>
+</body>

@@ -8,40 +8,26 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class User {
-    @Id
-    @GeneratedValue
-    private int id;
-
-    @NotNull
-    private String username;
+public class User extends AbstractEntity {
 
     @NotNull
     private String pwHash;
 
-
+//    We use it to create and verify hashes.
     private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
     public User() {
     }
 
-    public User(String username, String password) {
-        this.username = username;
+    public User(String name, String password) {
+        super(name);
+//        We use encoder to create a hash from the given password.
+//        We should never store passwords.
         this.pwHash = encoder.encode(password);
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
+//    To determine if a given password is a match for the hash stored by the object.
     public boolean isMatchingPassword(String password) {
         return encoder.matches(password, pwHash);
     }

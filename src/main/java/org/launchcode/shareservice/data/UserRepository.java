@@ -4,5 +4,7 @@ import org.launchcode.shareservice.models.User;
 import org.springframework.data.repository.CrudRepository;
 
 public interface UserRepository extends CrudRepository<User,Integer>  {
-    User findByUsername(String username);
+
+//    To take a username and return the given user with that username.
+    User findByName(String name);
 }

@@ -21,6 +21,7 @@ public class AuthenticationFilter extends HandlerInterceptorAdapter {
     @Autowired
     AuthenticationController authenticationController;
 
+//    A list of items(stars with) that are not subject to a given restriction.
     private static final List<String> whitelist = Arrays.asList("/mainpage", "/login", "/register", "/logout", "/css");
 
     private static boolean isWhitelisted(String path) {
@@ -32,7 +33,7 @@ public class AuthenticationFilter extends HandlerInterceptorAdapter {
         return false;
     }
 
-
+//    Called before a request is handled by a controller
     @Override
     public boolean preHandle(HttpServletRequest request,
                              HttpServletResponse response,
@@ -52,7 +53,7 @@ public class AuthenticationFilter extends HandlerInterceptorAdapter {
             return true;
         }
 
-        // The user is NOT logged in
+        // The user is NOT logged in. Stay on lgoin page.
         response.sendRedirect("/login");
         return false;
     }

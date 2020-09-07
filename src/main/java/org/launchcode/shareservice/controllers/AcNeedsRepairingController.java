@@ -73,7 +73,7 @@ public class AcNeedsRepairingController {
         Optional optState = stateRepository.findById(state);
         if (optState.isPresent()) {
             State aState = (State) optState.get();
-            model.addAttribute("employer", aState);
+            model.addAttribute("state", aState);
             acNeedsRepairingRepository.save(newAcNeedsRepairing);
             return "/acNeedsRepairing/view";
         } else {
@@ -97,6 +97,20 @@ public class AcNeedsRepairingController {
             }
         }
         return "redirect:";
+    }
+
+
+    @GetMapping("view/{acNeedsRepairingId}")
+    public String displayViewJob(Model model, @PathVariable int acNeedsRepairingId) {
+
+        Optional optJob = acNeedsRepairingRepository.findById(acNeedsRepairingId);
+        if (optJob.isPresent()) {
+            AcNeedsRepairing aJob = (AcNeedsRepairing) optJob.get();
+            model.addAttribute("acNeedsRepairing", aJob);
+            return "/acNeedsRepairing/view";
+        } else {
+            return "redirect:../";
+        }
     }
 
 }

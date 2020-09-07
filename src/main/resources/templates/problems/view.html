@@ -4,7 +4,7 @@
 <body class="container">
 
 <nav th:replace="fragments :: navigation1"></nav>
-<nav th:replace="fragments :: navigation3"></nav>
+
 
 <h1 th:text="${'Problem: ' + problem.name}">Default Title</h1>
 
@@ -13,8 +13,8 @@
     <p th:text="${'Description: ' + problem.description}"></p>
     <p> Jobs:
     <ul>
-        <li th:each="job : ${problem.acNeedsRepairings}">
-            <a th:href="@{'/view/' + ${acNeedsRepairing.id}}" th:text="${acNeedsRepairing.name}"></a>
+        <li th:each="acNeedsRepairing : ${problem.acNeedsRepairings}">
+            <a th:href="@{'/acNeedsRepairing/view/' + ${acNeedsRepairing.id}}" th:text="${acNeedsRepairing.name}"></a>
         </li>
     </ul>
     </p>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<h1 th:text="${title}"></h1>
+
+
+<form method="post" style="max-width:600px;">
+    <div class="form-group">
+        <label th:for="name">Customer Name</label>
+        <input class="form-control" th:field="${acNeedsRepairing.name}" />
+        <p th:errors="${acNeedsRepairing.name}" class="error"></p>
+    </div>
+
+    <div class="form-group">
+        <label th:for="state">State</label>
+        <select name="state">
+            <option th:each="state : ${states}"
+                    th:text="${state.name}"
+                    th:value="${state.id}"></option>
+        </select>
+        <a th:href="@{'/states/add'}">Add States</a>
+    </div>
+
+    <div class="form-group">
+        <label th:for="city">City</label>
+        <select name="city">
+            <option th:each="city : ${cities}"
+                    th:text="${city.name}"
+                    th:value="${city.id}"></option>
+        </select>
+        <a th:href="@{'/cities/add'}">Add Cities</a>
+    </div>
+
+
+    <div class="form-group">
+        <label th:for="problems">Problems</label>
+        <th:block th:each="problem : ${problems}">
+            <input type="checkbox" name="problems" th:value="${problem.id}">
+            <label th:text="${problem.name}"></label>
+        </th:block>
+        <p th:errors="${acNeedsRepairing.problems}" class="error"></p>
+        <a th:href="@{'/problems/add'}">Add Problems</a>
+    </div>
+
+    <input type="submit" value="Add Job" />
+</form>
+</div>
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

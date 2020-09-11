@@ -2,9 +2,9 @@ package org.launchcode.shareservice.controllers;
 
 
 import org.launchcode.shareservice.data.AcNeedsRepairingRepository;
-import org.launchcode.shareservice.data.CityRepository;
 import org.launchcode.shareservice.data.ProblemRepository;
 import org.launchcode.shareservice.data.StateRepository;
+import org.launchcode.shareservice.data.ZipCodeRepository;
 import org.launchcode.shareservice.models.AcNeedsRepairing;
 import org.launchcode.shareservice.models.State;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,21 +31,21 @@ public class AcNeedsRepairingController {
     private ProblemRepository problemRepository;
 
     @Autowired
-    private CityRepository cityRepository;
+    private ZipCodeRepository zipCodeRepository;
 
     @GetMapping("add")
-    public String displayAddJobForm(Model model) {
+    public String displayAddForm(Model model) {
         model.addAttribute("title", "AC Needs Repairing");
         model.addAttribute("acNeedsRepairing", new AcNeedsRepairing());
         model.addAttribute("states", stateRepository.findAll());
-        model.addAttribute("cities", cityRepository.findAll());
+        model.addAttribute("zipCodes", zipCodeRepository.findAll());
         model.addAttribute("problems", problemRepository.findAll());
         return "/acNeedsRepairing/add";
     }
 
     @PostMapping("add")
 //    we must put Errors errors parameter directly after the Job parameter for it to work properly
-    public String processAddJobForm(@ModelAttribute @Valid AcNeedsRepairing newAcNeedsRepairing,
+    public String processAddForm(@ModelAttribute @Valid AcNeedsRepairing newAcNeedsRepairing,
                                     Errors errors,
                                     @RequestParam int state,
                                     @RequestParam List<Integer> problems,
@@ -53,7 +53,7 @@ public class AcNeedsRepairingController {
         if(problems.isEmpty()){
             model.addAttribute("title", "AC Needs Repairing");
             model.addAttribute("states", stateRepository.findAll());
-            model.addAttribute("cities", cityRepository.findAll());
+            model.addAttribute("zipCodes", zipCodeRepository.findAll());
             model.addAttribute("problems", problemRepository.findAll());
             return "/acNeedsRepairing/add";
         }
@@ -61,14 +61,11 @@ public class AcNeedsRepairingController {
         if (errors.hasErrors()) {
             model.addAttribute("title", "AC Needs Repairing");
             model.addAttribute("states", stateRepository.findAll());
-            model.addAttribute("cities", cityRepository.findAll());
+            model.addAttribute("zipCodes", zipCodeRepository.findAll());
             model.addAttribute("problems", problemRepository.findAll());
             return "/acNeedsRepairing/add";
         }
 
-
-//        List<Skill> skillObjs = (List<Skill>) skillRepository.findAllById(skills);
-//        newJob.setSkills(skillObjs);
 
         Optional optState = stateRepository.findById(state);
         if (optState.isPresent()) {
@@ -83,14 +80,14 @@ public class AcNeedsRepairingController {
 
 
     @GetMapping("delete")
-    public String renderDeleteEventForm(Model model) {
+    public String renderDeleteForm(Model model) {
         model.addAttribute("title", "Delete Job");
         model.addAttribute("acNeedsRepairings", acNeedsRepairingRepository.findAll());
         return "/acNeedsRepairing/delete";
     }
 
     @PostMapping("delete")
-    public String processDeleteEventsForm(@RequestParam(required = false) int[] acNeedsRepairingIds) {
+    public String processDeleteForm(@RequestParam(required = false) int[] acNeedsRepairingIds) {
         if (acNeedsRepairingIds != null) {
             for (int id : acNeedsRepairingIds) {
                 acNeedsRepairingRepository.deleteById(id);
@@ -101,7 +98,7 @@ public class AcNeedsRepairingController {
 
 
     @GetMapping("view/{acNeedsRepairingId}")
-    public String displayViewJob(Model model, @PathVariable int acNeedsRepairingId) {
+    public String displayView(Model model, @PathVariable int acNeedsRepairingId) {
 
         Optional optJob = acNeedsRepairingRepository.findById(acNeedsRepairingId);
         if (optJob.isPresent()) {

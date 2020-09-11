@@ -9,14 +9,14 @@
 <h1 th:text="${title}"></h1>
 
 
-<p th:unless="${cities} and ${cities.size()}" style="color:red">no city!</p>
+<p th:unless="${zipCodes} and ${zipCodes.size()}" style="color:red">no zip code!</p>
 
 <ul>
-    <li th:each="city : ${cities}">
-        <a th:href="@{'/cities/view/' + ${city.id}}" th:text="${city.name}"></a>
+    <li th:each="zipCode : ${zipCodes}">
+        <a th:href="@{'/zipCodes/view/' + ${zipCode.id}}" th:text="${zipCode.name}"></a>
     </li>
 </ul>
-<a th:href="@{'/cities/add'}">Add Cities</a>
+<a th:href="@{'/zipCodes/add'}">Add Zip Code</a>
 
 
 

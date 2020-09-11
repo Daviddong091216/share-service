@@ -1,8 +1,6 @@
 package org.launchcode.shareservice.controllers;
 
-import org.launchcode.shareservice.data.CityRepository;
 import org.launchcode.shareservice.data.StateRepository;
-import org.launchcode.shareservice.models.City;
 import org.launchcode.shareservice.models.State;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

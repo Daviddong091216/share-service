@@ -14,7 +14,27 @@
         <input class="form-control" th:field="${acNeedsRepairing.name}" />
         <p th:errors="${acNeedsRepairing.name}" class="error"></p>
     </div>
+    <div class="form-group">
+        <label th:for="problems">Problem Categories</label>
+        <th:block th:each="problem : ${problems}">
+            <input type="checkbox" name="problems" th:value="${problem.id}">
+            <label th:text="${problem.name}"></label>
+        </th:block>
+        <p th:errors="${acNeedsRepairing.problems}" class="error"></p>
+        <a th:href="@{'/problems/add'}">Add Problem Categories</a>
+    </div>
 
+
+    <div class="form-group">
+        <label th:for="name">Problem Details</label>
+        <input class="form-control" th:field="${acNeedsRepairing.description}" />
+        <p th:errors="${acNeedsRepairing.description}" class="error"></p>
+    </div>
+    <div class="form-group">
+        <label th:for="name">Address</label>
+        <input class="form-control" th:field="${acNeedsRepairing.address}" />
+        <p th:errors="${acNeedsRepairing.address}" class="error"></p>
+    </div>
     <div class="form-group">
         <label th:for="state">State</label>
         <select name="state">
@@ -26,29 +46,42 @@
     </div>
 
     <div class="form-group">
-        <label th:for="city">City</label>
-        <select name="city">
-            <option th:each="city : ${cities}"
-                    th:text="${city.name}"
-                    th:value="${city.id}"></option>
+        <label th:for="zipCode">Zip Code</label>
+        <select name="zipCode">
+            <option th:each="zipCode : ${zipCodes}"
+                    th:text="${zipCode.name}"
+                    th:value="${zipCode.id}"></option>
         </select>
-        <a th:href="@{'/cities/add'}">Add Cities</a>
+        <a th:href="@{'/zipCodes/add'}">Add Zip Code</a>
     </div>
 
 
     <div class="form-group">
-        <label th:for="problems">Problems</label>
-        <th:block th:each="problem : ${problems}">
-            <input type="checkbox" name="problems" th:value="${problem.id}">
-            <label th:text="${problem.name}"></label>
-        </th:block>
-        <p th:errors="${acNeedsRepairing.problems}" class="error"></p>
-        <a th:href="@{'/problems/add'}">Add Problems</a>
+        <label th:for="name">Email</label>
+        <input class="form-control" th:field="${acNeedsRepairing.email}" />
+        <p th:errors="${acNeedsRepairing.email}" class="error"></p>
     </div>
+    <div class="form-group">
+        <label th:for="name">Phone Number</label>
+        <input class="form-control" th:field="${acNeedsRepairing.phoneNumber}" />
+        <p th:errors="${acNeedsRepairing.phoneNumber}" class="error"></p>
+    </div>
+    <div class="form-group">
+        <label th:for="name">Date</label>
+        <input class="form-control" th:field="${acNeedsRepairing.date}" />
+        <p th:errors="${acNeedsRepairing.date}" class="error"></p>
+    </div>
+
+    <div class="form-group">
+        <label th:for="name">Time</label>
+        <input class="form-control" th:field="${acNeedsRepairing.time}" />
+        <p th:errors="${acNeedsRepairing.time}" class="error"></p>
+    </div>
+
 
     <input type="submit" value="Add" />
 </form>
 </div>
-<div th:replace="fragments :: footer"></div>
+<!--<div th:replace="fragments :: footer"></div>-->
 </body>
 </html>

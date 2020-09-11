@@ -9,15 +9,15 @@
 <h1 th:text="${title}"></h1>
 
 
-<h1 th:text="${'City: ' + city.name}">Default Title</h1>
+<h1 th:text="${'Zip Code: ' + zipCode.name}">Default Title</h1>
 
 
 <div class="job-listing">
-    <p th:text="${'City:' + city.name}"></p>
+    <p th:text="${'Zip Code:' + zipCode.name}"></p>
 
     <p> Ac Needs Repairing:
     <ul>
-        <li th:each="acNeedsRepairing : ${city.acNeedsRepairings}">
+        <li th:each="acNeedsRepairing : ${zipCode.acNeedsRepairings}">
             <a th:href="@{'/acNeedsRepairing/view/' + ${acNeedsRepairing.id}}" th:text="${acNeedsRepairing.name}"></a>
         </li>
     </ul>

@@ -19,7 +19,7 @@ public class ProblemController {
     private ProblemRepository problemRepository;
 
     @GetMapping()
-    public String displayAllSkills(Model model) {
+    public String displayAllProblems(Model model) {
         model.addAttribute("title", "All Problems");
         model.addAttribute("problems", problemRepository.findAll());
         return "problems/index";
@@ -27,14 +27,14 @@ public class ProblemController {
 
 
     @GetMapping("add")
-    public String displayAddSkillForm(Model model) {
+    public String displayAddProblemForm(Model model) {
         model.addAttribute("title", "Add Problem");
         model.addAttribute(new Problem());
         return "problems/add";
     }
 
     @PostMapping("add")
-    public String processAddSkillForm(@ModelAttribute @Valid Problem newProblem,
+    public String processAddProblemForm(@ModelAttribute @Valid Problem newProblem,
                                       Errors errors) {
         if (errors.hasErrors()) {
             return "problems/add";
@@ -44,7 +44,7 @@ public class ProblemController {
     }
 
     @GetMapping("view/{problemId}")
-    public String displayViewSkill(Model model, @PathVariable int problemId) {
+    public String displayViewProblem(Model model, @PathVariable int problemId) {
         Optional optProblem = problemRepository.findById(problemId);
         if (optProblem.isPresent()) {
             Problem problem = (Problem) optProblem.get();
@@ -56,14 +56,14 @@ public class ProblemController {
     }
 
     @GetMapping("delete")
-    public String renderDeleteEventForm(Model model) {
+    public String renderDeleteProblemForm(Model model) {
         model.addAttribute("title", "Delete Problem");
         model.addAttribute("problems", problemRepository.findAll());
         return "problems/delete";
     }
 
     @PostMapping("delete")
-    public String processDeleteEventsForm(@RequestParam(required = false) int[] problemIds) {
+    public String processDeleteProblemForm(@RequestParam(required = false) int[] problemIds) {
         if (problemIds != null) {
             for (int id : problemIds) {
                 problemRepository.deleteById(id);

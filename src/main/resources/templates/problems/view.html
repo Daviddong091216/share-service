@@ -10,7 +10,6 @@
 
 <div class="job-listing">
     <p th:text="${'Name: ' + problem.name}"></p>
-    <p th:text="${'Description: ' + problem.description}"></p>
     <p> Jobs:
     <ul>
         <li th:each="acNeedsRepairing : ${problem.acNeedsRepairings}">

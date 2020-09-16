@@ -36,6 +36,9 @@ public class AcNeedsRepairing extends AbstractEntity {
     @NotNull(message = "Time is required!")
     private String time;
 
+    @NotNull(message = "Whether Emergency is required!")
+    private String whetherEmergency;
+
     @ManyToOne
     @NotNull(message = "State is required.")
     private State state;
@@ -55,7 +58,8 @@ public class AcNeedsRepairing extends AbstractEntity {
 
     public AcNeedsRepairing(String name, String description, String address,
                             String email, String phoneNumber, String date,
-                            String time, State state, ZipCode zipCode) {
+                            String time, String whetherEmergency, State state,
+                            ZipCode zipCode) {
         super(name);
         this.description = description;
         this.address = address;
@@ -63,6 +67,7 @@ public class AcNeedsRepairing extends AbstractEntity {
         this.phoneNumber = phoneNumber;
         this.date = date;
         this.time = time;
+        this.whetherEmergency = whetherEmergency;
         this.state = state;
         this.zipCode = zipCode;
     }
@@ -121,6 +126,14 @@ public class AcNeedsRepairing extends AbstractEntity {
 
     public void setState(State state) {
         this.state = state;
+    }
+
+    public String getWhetherEmergency() {
+        return whetherEmergency;
+    }
+
+    public void setWhetherEmergency(String whetherEmergency) {
+        this.whetherEmergency = whetherEmergency;
     }
 
     public ZipCode getZipCode() {

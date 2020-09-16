@@ -28,8 +28,10 @@
 
     <div class="form-group">
         <label th:for="name">Whether Emergency</label>
-        <lable>Yes<input class="form-control" type="radio" value="Yes" th:field="${acNeedsRepairing.whetherEmergency}" /></lable>
-        <lable>No<input class="form-control" type="radio" value="No" th:field="${acNeedsRepairing.whetherEmergency}" /></lable>
+        <span>
+        <lable>Yes<input  type="radio" value="Yes" th:field="${acNeedsRepairing.whetherEmergency}" /></lable>
+        <lable>No<input  type="radio" value="No" th:field="${acNeedsRepairing.whetherEmergency}" /></lable>
+        </span>
         <p th:errors="${acNeedsRepairing.whetherEmergency}" class="error"></p>
     </div>
 

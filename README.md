@@ -15,6 +15,25 @@ I only begin to create one small portion of it--AC repaired wanted.<br />
 Today's one step is tomorrow's big progress. <br />
 Let's go to help people make lives easy and happy!<br />
 
+### Features
+User register/login/logout: Users will be able to create accounts and log in to the application. Each user will have a profile page.<br />
+Create/delete Wanted help events: Users will be able to create/delete new wanted help events when logged in. New events will appear in the user’s profile.<br />
+Search: Users will be able to search for wanted help events containing given text.<br />
+Link to goole map: The wanted help events location will link to goole map.<br />
+Get fun humors: For fun, users will get fun humors from the webpage.<br />
+### Technologies
+Java<br />
+Spring Boot<br />
+MySQL<br />
+Hibernate<br />
+Thymeleaf templates<br />
+HTML<br />
+CSS<br />
+JavaScript<br />
+JSON<br />
+Google map API<br />
+Webpage API<br />
+
 How do I mark the progress of a junior developer or a software engineer?<br />
 
 Alan Mellor, Consultant Software Engineer (1990-present)<br />

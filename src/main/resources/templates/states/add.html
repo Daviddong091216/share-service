@@ -9,21 +9,6 @@
 
 <h1 th:text="${title}"></h1>
 
-<p id="main-text" class="orange" style="font-weight: bold;">
-    a bunch of really valuable text...
-</p>
-<button id="ring-button">Ring Bell</button>
-<script>
-      function youRang() {
-         document.getElementById("main-text").innerHTML += "you rang...";
-         console.log("you rang again...");
-      }
-      // Obtain a reference to the button element
-      let button = document.getElementById("ring-button");
-      // Set named function youRang as the click event handler
-      button.addEventListener("click", youRang);
- </script>
-
 <form method="post" style="max-width:600px;">
     <div class="form-group">
         <label th:for="name">State Name</label>

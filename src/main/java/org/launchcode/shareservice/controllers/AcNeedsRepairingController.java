@@ -1,10 +1,7 @@
 package org.launchcode.shareservice.controllers;
 
 
-import org.launchcode.shareservice.data.AcNeedsRepairingRepository;
-import org.launchcode.shareservice.data.ProblemRepository;
-import org.launchcode.shareservice.data.StateRepository;
-import org.launchcode.shareservice.data.ZipCodeRepository;
+import org.launchcode.shareservice.data.*;
 import org.launchcode.shareservice.models.AcNeedsRepairing;
 import org.launchcode.shareservice.models.State;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +17,8 @@ import java.util.Optional;
 @Controller
 @RequestMapping(value = "acNeedsRepairing")
 public class AcNeedsRepairingController {
+
+    private UserRepository userRepository;
 
     @Autowired
     private AcNeedsRepairingRepository acNeedsRepairingRepository;

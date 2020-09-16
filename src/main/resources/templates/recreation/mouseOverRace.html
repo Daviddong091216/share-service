@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head >
+    <meta charset="UTF-8"/>
     <title>Mouseover Event</title>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script th:src="@{/js/script.js}"></script>
+    <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+    <link  rel="stylesheet" th:href="@{/css/shareservice.css}"/>
+    <link  rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+
+
     <script>
          window.addEventListener("load", function() {
             let list = document.getElementById("lane-list");
@@ -14,7 +22,10 @@
    </script>
 
 </head>
-<body>
+<body  class="container">
+
+<nav th:replace="fragments :: navigation"></nav>
+
 <h1>Recreation time .....</h1>
 
 <h3>Mouseover Race</h3>
@@ -24,7 +35,7 @@
     <li>Lane 3:</li>
 </ul>
 
-<h4><a href="/mainpage">Main Page</a></h4>
 
+<div th:replace="fragments :: footer"></div>
 </body>
 </html>

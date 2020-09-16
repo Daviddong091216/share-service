@@ -4,23 +4,10 @@
     <meta charset="UTF-8"/>
     <title>Mouseover Event</title>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script th:src="@{/js/script.js}"></script>
+    <script th:src="@{/js/mouseoverrace.js}"></script>
     <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
     <link  rel="stylesheet" th:href="@{/css/shareservice.css}"/>
     <link  rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
-
-
-    <script>
-         window.addEventListener("load", function() {
-            let list = document.getElementById("lane-list");
-            list.addEventListener("mouseover", function (event) {
-               let element = event.target;
-               element.innerHTML += ">";
-               console.log("target", element);
-            });
-         });
-   </script>
-
 </head>
 <body  class="container">
 
@@ -33,6 +20,7 @@
     <li>Lane 1:</li>
     <li>Lane 2:</li>
     <li>Lane 3:</li>
+    <li>Lane 4:</li>
 </ul>
 
 

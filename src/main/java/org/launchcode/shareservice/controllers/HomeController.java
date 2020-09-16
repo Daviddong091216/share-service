@@ -10,8 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
     @GetMapping
+    public String displayHomePage(Model model) {
+        model.addAttribute("title","Welcome To Share Service.");
+        return "homePage";
+    }
+
+
+    @GetMapping("index")
     public String displayMainPage(Model model) {
-        model.addAttribute("title","Home Page");
+        model.addAttribute("title","Categories");
         return "index";
     }
+
 }

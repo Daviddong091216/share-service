@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Flight Simulator</title>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <script th:src="@{/js/launchRocket.js}"></script>
+    <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+    <link  rel="stylesheet" th:href="@{/css/shareservice.css}"/>
+    <link  rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <link  rel="stylesheet" th:href="@{/css/launchRocket.css}"/>
+
+</head>
+<body  class="container">
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<div style="text-align: center;">
+    <h1>Flight Simulator</h1>
+    <h2>Current Flight Status</h2>
+    <p id = "flightStatus">Space shuttle ready for takeoff</p>
+    <h2>Shuttle Trajectory</h2>
+</div>
+<div style="text-align: center; height: 400px; width: 100%;" >
+    <div style="text-align: center; display: inline-block;">
+        <h3>Fuel Levels</h3>
+        <p>Tank Full</p>
+        <h3>Astronaut Chat</h3>
+        <p>Houston, we are ready when you are!</p>
+    </div>
+    <div id = "shuttleBackground" style = "position: relative;">
+        <img src = "@{/static/images/rocket1.png}" height = "75" width = "75" id = "rocket" style="left:195px;bottom:0;position:absolute;"/>
+    </div>
+    <div style = "text-align: center; display: inline-block;">
+        <button id="up">Up</button>
+        <button id="down">Down</button>
+        <button id="right">Right</button>
+        <button id="left">Left</button>
+        <h3>Space Shuttle Height</h3>
+        <p id='spaceShuttleHeight'>0</p><p style = "display: inline-block;"> miles</p>
+    </div>
+</div>
+<div style="text-align: center;">
+    <button id = "takeoff">Take off</button>
+    <button id = "landing">Land</button>
+    <button id = "missionAbort">Abort Mission</button>
+</div>
+
+
+<div th:replace="fragments :: footer"></div>
+</body>

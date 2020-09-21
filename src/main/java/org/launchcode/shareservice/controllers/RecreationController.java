@@ -10,8 +10,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class RecreationController {
 
     @GetMapping("mouseOverRace")
-    public String displayMainPage(Model model) {
+    public String displayPage(Model model) {
         return "recreation/mouseOverRace";
+    }
+
+    @GetMapping("guessNumberJavaScript")
+    public String displayGuessPage1(Model model) {
+        return "recreation/guessNumberJavaScript";
+    }
+
+    @GetMapping("guessNumberJava")
+    public String displayGuessPage2(Model model) {
+        return "recreation/guessNumberJava";
     }
 
 }

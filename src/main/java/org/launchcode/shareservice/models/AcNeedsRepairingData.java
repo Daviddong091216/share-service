@@ -55,7 +55,7 @@ public class AcNeedsRepairingData {
      * Search all Job fields for the given term.
      *
      * @param value   The search term to look for.
-     * @param allJobs The list of jobs to search.
+     * @param allAcNeedsRepairings The list of jobs to search.
      * @return List of all jobs with at least one field containing the value.
      */
     public static ArrayList<AcNeedsRepairing> findByValue(String value, Iterable<AcNeedsRepairing> allAcNeedsRepairings) {

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<nav th:replace="fragments :: navigation1"></nav>
+
+<div class="container body-content">
+<h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+<h2 class = "centered">View AcNeedsRepairing By Category</h2>
+
+
+<table class="centeredTable">
+    <tr>
+        <th>All</th>
+        <th>Customer Name</th>
+        <th>Problem</th>
+        <th>State</th>
+        <th>Zip Code</th>
+    </tr>
+
+    <tr>
+        <td>
+            <li>
+                <a th:href="@{/list/jobs(column='All',value='View All')}">View All</a>
+            </li>
+        </td>
+        <td>
+            <li th:each="acNeedsRepairing : ${acNeedsRepairings}">
+                <a th:href="@{/list/jobs(column=name,value=${acNeedsRepairing.name})}" th:text="${acNeedsRepairing.name}"></a>
+            </li>
+        </td>
+        <td>
+            <li th:each="problem : ${problems}">
+                <a th:href="@{/list/jobs(column=problem,value=${problem.name})}" th:text="${problem.name}"></a>
+            </li>
+        </td>
+        <td>
+            <li th:each="state : ${states}">
+                <a th:href="@{/list/jobs(column=state,value=${state.name})}" th:text="${state.name}"></a>
+            </li>
+        </td>
+        <td>
+            <li th:each="zipCode : ${zipCodes}">
+                <a th:href="@{/list/jobs(column=zipCode,value=${zipCode.name})}" th:text="${zipCode.name}"></a>
+            </li>
+        </td>
+    </tr>
+</table>
+</div>
+
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

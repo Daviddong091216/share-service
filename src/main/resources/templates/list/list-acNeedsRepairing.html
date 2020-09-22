@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<nav th:replace="fragments :: navigation1"></nav>
+
+<h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+
+<p th:unless="${jobs} and ${jobs.size()}" style="color:red">no job!</p>
+
+<table class="job-listing">
+    <tr th:each="job : ${jobs}">
+        <td>
+            <p>
+                Job Id:
+                <a th:href="@{'/acNeedsRepairing/view/' + ${job.id}}" th:text="${job.id}"></a>
+            </p>
+            <p th:text="${'Name: ' + job.name}"></p>
+            <p>
+                State:
+                <a th:href="@{'/states/view/' + ${job.state.id}}" th:text="${job.state.name}"></a>
+            </p>
+            <p>
+                Zip Code:
+                <a th:text="${job.zipCode}"></a>
+            </p>
+
+            <p>
+                Problems:
+            <ul th:each="problem : ${job.problems}">
+                <li>
+                    <a th:href="@{'/problems/view/' + ${problem.id}}" th:text="${problem.name}"></a>
+                </li>
+            </ul>
+            </p>
+        </td>
+    </tr>
+</table>
+
+
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>

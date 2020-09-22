@@ -99,3 +99,9 @@ ul.list li{
    right:0;
    background:#8B0000;
 }
+
+
+.centeredTable {
+    margin-left: auto;
+    margin-right: auto;
+}

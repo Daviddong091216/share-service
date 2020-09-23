@@ -42,10 +42,10 @@ public class AcNeedsRepairingData {
             theValue = job.getName();
         } else if (fieldName.equals("problem")) {
             theValue = job.getProblems().toString();
-        } else if (fieldName.equals("state")) {
-            theValue = job.getState().toString();
-        } else {
+        } else if (fieldName.equals("zipCode")) {
             theValue = job.getZipCode().toString();
+        } else {
+            theValue = job.getState().toString();
         }
 
         return theValue;

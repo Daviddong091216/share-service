@@ -23,7 +23,7 @@
             </p>
             <p>
                 Zip Code:
-                <a th:text="${job.zipCode}"></a>
+                <a th:href="@{'/zipCodes/view/' + ${job.zipCode.id}}" th:text="${job.zipCode.name}"></a>
             </p>
 
             <p>

@@ -22,7 +22,7 @@ public class AuthenticationFilter extends HandlerInterceptorAdapter {
     AuthenticationController authenticationController;
 
 //    A list of items(stars with) that are not subject to a given restriction.
-    private static final List<String> whitelist = Arrays.asList("/mainpage", "/login", "/register", "/logout", "/css");
+    private static final List<String> whitelist = Arrays.asList("/list","/mainpage", "/login", "/register", "/logout", "/css");
 
     private static boolean isWhitelisted(String path) {
         for (String pathRoot : whitelist) {

@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head th:replace="fragments :: head"></head>
+<head th:replace="fragments :: head">
+    <style>
+table, th, td {
+  border: 1px solid black;
+}
+    </style>
+
+</head>
 <body class="container">
 
 <nav th:replace="fragments :: navigation1"></nav>
-
+<!--class="container body-content"-->
 <div class="container body-content">
 <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 <h2 class = "centered">View AcNeedsRepairing By Category</h2>
 
 
-<table class="centeredTable">
-    <tr>
+<table class="centeredTable" style="width: 50%;">
+    <tr >
         <th>All</th>
         <th>Customer Name</th>
         <th>Problem</th>

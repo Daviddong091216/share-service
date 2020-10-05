@@ -13,27 +13,43 @@
     <tr th:each="job : ${jobs}">
         <td>
             <p>
-                Job Id:
+                Job Id :
                 <a th:href="@{'/acNeedsRepairing/view/' + ${job.id}}" th:text="${job.id}"></a>
             </p>
-            <p th:text="${'Name: ' + job.name}"></p>
-            <p>
-                State:
-                <a th:href="@{'/states/view/' + ${job.state.id}}" th:text="${job.state.name}"></a>
-            </p>
-            <p>
-                Zip Code:
-                <a th:href="@{'/zipCodes/view/' + ${job.zipCode.id}}" th:text="${job.zipCode.name}"></a>
-            </p>
+            <p th:text="${'Name : ' + job.name}"></p>
+
+            <p th:text="${'Whether Emergency : ' + job.whetherEmergency}"></p>
 
             <p>
-                Problems:
+                Problems Categories :
             <ul th:each="problem : ${job.problems}">
                 <li>
                     <a th:href="@{'/problems/view/' + ${problem.id}}" th:text="${problem.name}"></a>
                 </li>
             </ul>
             </p>
+
+            <p th:text="${'Problem Details : ' + job.description}"></p>
+
+            <p th:text="${'Address : ' + job.address}"></p>
+
+            <p>
+                State :
+                <a th:href="@{'/states/view/' + ${job.state.id}}" th:text="${job.state.name}"></a>
+            </p>
+            <p>
+                Zip Code :
+                <a th:href="@{'/zipCodes/view/' + ${job.zipCode.id}}" th:text="${job.zipCode.name}"></a>
+            </p>
+
+            <p th:text="${'Email : ' + job.email}"></p>
+
+            <p th:text="${'Phone Number : ' + job.phoneNumber}"></p>
+
+            <p th:text="${'Date : ' + job.date}"></p>
+
+            <p th:text="${'Time : ' + job.time}"></p>
+
         </td>
     </tr>
 </table>

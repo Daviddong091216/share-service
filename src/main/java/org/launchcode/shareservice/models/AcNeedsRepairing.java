@@ -10,6 +10,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,6 +40,8 @@ public class AcNeedsRepairing extends AbstractEntity {
     @NotNull(message = "Whether Emergency is required!")
     private String whetherEmergency;
 
+//    private BufferedImage image;
+
     @ManyToOne
     @NotNull(message = "State is required.")
     private State state;
@@ -59,7 +62,7 @@ public class AcNeedsRepairing extends AbstractEntity {
     public AcNeedsRepairing(String name, String description, String address,
                             String email, String phoneNumber, String date,
                             String time, String whetherEmergency, State state,
-                            ZipCode zipCode) {
+                            ZipCode zipCode /*BufferedImage image*/) {
         super(name);
         this.description = description;
         this.address = address;
@@ -70,6 +73,7 @@ public class AcNeedsRepairing extends AbstractEntity {
         this.whetherEmergency = whetherEmergency;
         this.state = state;
         this.zipCode = zipCode;
+//        this.image=image;
     }
 
     public String getDescription() {
@@ -154,5 +158,11 @@ public class AcNeedsRepairing extends AbstractEntity {
         }
     }
 
-
+//    public BufferedImage getImage() {
+//        return image;
+//    }
+//
+//    public void setImage(BufferedImage image) {
+//        this.image = image;
+//    }
 }

@@ -42,6 +42,10 @@
     </div>
 
     <div class="form-group">
+        <input type="file" name="upload"  value="Select one Image">
+    </div>
+
+    <div class="form-group">
         <label th:for="name">Address</label>
         <input class="form-control" placeholder="129 Steamboat Lane apt 203, Ballwin" th:field="${acNeedsRepairing.address}" />
         <p th:errors="${acNeedsRepairing.address}" class="error"></p>

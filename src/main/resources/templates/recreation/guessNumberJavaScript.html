@@ -27,7 +27,7 @@
     <label for="guessField">Enter a guess number: </label>
     <input type = "text" id = "guessField" class = "guessField">
     <input type = "submit" value = "Submit the guess number"
-           class = "guessSubmit" id = "submitguess">
+           class = "guessSubmit" id = "submitGuess">
 </div>
 
 
@@ -40,7 +40,7 @@
     // made for correct Guess
     let guess = 1;
 
-    document.getElementById("submitguess").onclick = function(){
+    document.getElementById("submitGuess").onclick = function(){
 
         // number guessed by user
         let guessNumber = document.getElementById("guessField").value;

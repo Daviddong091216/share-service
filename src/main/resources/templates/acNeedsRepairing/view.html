@@ -30,6 +30,13 @@
     </p>
 </div>
 
+<div class="row">
+    <div class="col-1">
+        <a class="btn btn-primary" th:href="@{${'/acNeedsRepairing/update/'+acNeedsRepairing.id}}">
+            <i class="fas fa-edit"></i> Edit</a>
+    </div>
+</div>
+
 <div th:replace="fragments :: footer"></div>
 </body>
 </html>

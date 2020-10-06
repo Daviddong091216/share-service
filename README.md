@@ -18,7 +18,7 @@ Let's go to help people make lives easy and happy!<br />
 ### Features
 1.User register/login/logout: Users will be able to create accounts and log in to the application. Each user will have a profile page.<br />
 2.Create/delete/edit Wanted help events: Users will be able to create/delete/edit new wanted help events when logged in. New events will appear in the user’s profile.<br />
-3.List:Users will be able to check the list for wanted help events
+3.List:Users will be able to check the list for wanted help events.<br />
 4.Search: Users will be able to search for wanted help events containing given text.<br />
 5.JavaScript Skills show: MouseOverRace/GuessNumber/LaunchRocket/GetWeatherCondition.<br />
 6.Link to google map(Not yet!): The wanted help events location will link to goole map.<br />

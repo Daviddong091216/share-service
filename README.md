@@ -16,23 +16,27 @@ Today's one step is tomorrow's big progress. <br />
 Let's go to help people make lives easy and happy!<br />
 
 ### Features
-User register/login/logout: Users will be able to create accounts and log in to the application. Each user will have a profile page.<br />
-Create/delete Wanted help events: Users will be able to create/delete new wanted help events when logged in. New events will appear in the user’s profile.<br />
-Search: Users will be able to search for wanted help events containing given text.<br />
-Link to goole map: The wanted help events location will link to goole map.<br />
-Get fun humors: For fun, users will get fun humors from the webpage.<br />
+1.User register/login/logout: Users will be able to create accounts and log in to the application. Each user will have a profile page.<br />
+2.Create/delete/edit Wanted help events: Users will be able to create/delete/edit new wanted help events when logged in. New events will appear in the user’s profile.<br />
+3.List:Users will be able to check the list for wanted help events
+4.Search: Users will be able to search for wanted help events containing given text.<br />
+5.JavaScript Skills show: MouseOverRace/GuessNumber/LaunchRocket/GetWeatherCondition.<br />
+6.Link to google map(Not yet!): The wanted help events location will link to goole map.<br />
+
 ### Technologies
 Java<br />
 Spring Boot<br />
+JavaScript<br />
 MySQL<br />
 Hibernate<br />
 Thymeleaf templates<br />
 HTML<br />
 CSS<br />
-JavaScript<br />
-JSON<br />
-Google map API<br />
 Webpage API<br />
+JSON<br />
+
+Google map API(Not yet!)<br />
+
 
 How do I mark the progress of a junior developer or a software engineer?<br />
 

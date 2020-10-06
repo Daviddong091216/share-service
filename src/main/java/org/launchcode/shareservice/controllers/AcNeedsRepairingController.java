@@ -94,7 +94,7 @@ public class AcNeedsRepairingController {
                 acNeedsRepairingRepository.deleteById(id);
             }
         }
-        return "redirect:";
+        return "redirect:../";
     }
 
 

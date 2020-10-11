@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Search Jokes</title>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+    <link  rel="stylesheet" th:href="@{/css/shareservice.css}"/>
+    <link  rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+
+</head>
+<body  class="container">
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<h1>Web API Skills Show:</h1>
+
+<h2>Here are your jokes:</h2>
+
+<h4 th:each="joke : ${dadJokes.results}">
+    <ol style="color: darkgreen;text-decoration: underline" th:text="${joke.joke}"></ol>
+</h4>
+
+
+<div th:replace="fragments :: footer"></div>
+</body>

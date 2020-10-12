@@ -52,8 +52,8 @@ public class DadJokeService {
         return dadJoke;
     }
 
-    public DadJokeSearch SearchDadJokes(String searchString) throws IOException{
-        URL url = new URL("https://icanhazdadjoke.com/search?term="+searchString);
+    public DadJokeSearch SearchDadJokes(String searchString,int limit) throws IOException{
+        URL url = new URL("https://icanhazdadjoke.com/search?term="+searchString+"&limit="+limit+"&current_page="+2);
         HttpURLConnection connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.setRequestProperty("Accept", "application/json");

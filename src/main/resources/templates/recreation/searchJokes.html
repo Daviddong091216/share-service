@@ -18,14 +18,17 @@
 
 <form th:action="@{/recreation/searchJokes}" method = "post">
     <h2>
-        <label for="searchTerm">Search Jokes from www.icanhazdadjoke.com:</label>
+        <label for="searchTerm">Search Jokes from www.icanhazdadjoke.com:（the total is ten)</label>
         <input type="text" name="searchTerm" id="searchTerm" />
     </h2>
     <h4>
-        <label for="searchTerm">How many items do you want to display:</label>
+        <label for="searchTerm">How many items do you want to display on one page:</label>
         <input type="text" name="limit" id="limit" />
     </h4>
-
+    <h4>
+        <label for="searchTerm">Which page do you want to go to？</label>
+        <input type="text" name="page" id="page" />
+    </h4>
 
     <input type="submit" value="Search Jokes" />
 </form>

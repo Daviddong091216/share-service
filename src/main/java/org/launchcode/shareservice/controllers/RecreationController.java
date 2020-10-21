@@ -62,9 +62,9 @@ public class RecreationController {
     //    http://localhost:8080/searchJokes?searchTerm=cat
     @PostMapping("searchJokes")
     public String Index(Model model, @RequestParam String searchTerm,
-                        @RequestParam int limit) throws IOException {
+                        @RequestParam int limit, @RequestParam int page) throws IOException {
         DadJokeService dadJokeService = new DadJokeService();
-        DadJokeSearch dadJokes = dadJokeService.SearchDadJokes(searchTerm,limit);
+        DadJokeSearch dadJokes = dadJokeService.SearchDadJokes(searchTerm,limit,page);
 
         model.addAttribute("dadJokes", dadJokes);
 
